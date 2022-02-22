@@ -56,19 +56,19 @@ extension ViewController:UITableViewDataSource, UITableViewDelegate{
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetails", sender: self)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "showDetails", sender: self)
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? DetailsViewController {
-            destination.details = newsArray[tableView.indexPathForSelectedRow!.row]
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? DetailsViewController {
+//            destination.details = newsArray[tableView.indexPathForSelectedRow!.row]
+//        }
+//    }
 }
 
 extension ViewController:UISearchBarDelegate{
@@ -86,9 +86,9 @@ extension ViewController:UISearchBarDelegate{
         self.tableView.reloadData()
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        managingData(search: "Bitcoin")
-    }
+//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        managingData(search: "Bitcoin")
+//    }
 }
 
 extension ViewController:TableViewCellDelegate{
@@ -108,3 +108,19 @@ extension ViewController:TableViewCellDelegate{
 
 
 
+//func addFavorite(model:Article){
+//    if !isNewsFind(model: model){
+//        favoritesNews.append(model)
+//    }
+//}
+//
+//func isNewsFind(model: Article) -> Bool{
+//    let filtered = self.favoritesNews.filter { article in
+//        return article.source?.id == model.source?.id
+//    }
+//    if filtered.count > 0 {
+//        print("Haber Bulundu Filtre")
+//        return true
+//    }
+//    return false
+//}

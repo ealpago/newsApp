@@ -28,7 +28,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
-
+    
     func initialize(details:Article){
         self.details = details
     }
@@ -57,17 +57,24 @@ class DetailsViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func favoriteButtonTapped(){
-        print("ButtonTapped")
-        print(details?.title as Any)
-        if let details = details {
-            FavoritesViewController.favoritesNews.append(details)
+    @IBAction func favoriteButtonTapped(_ sender: UIButton){
+        sender.isSelected = !sender.isSelected
+        buttonChecked = sender.isSelected
+        if !buttonChecked {
+            favoritesButton?.setImage(UIImage(named: "favoriteDisable"), for: .normal)
+            if let details = details {
+                print("Haber Silindi")
+                FavoriteManager.shared.removeFavorite(model: details)
+            }
+        } else {
+            favoritesButton?.setImage(UIImage(named: "favoriteEnable"), for: .normal)
+            if let details = details {
+                FavoriteManager.shared.addFavorite(model: details)
+            }
         }
+        //buttonChecked
+//        if let details = details {
+//            FavoriteManager.shared.addFavorite(model: details)
+//        }
     }
 }
-
-//extension DetailsViewController:FavoriteViewControllerDelegate{
-//    func addFavorites(model: Article) {
-//
-//    }
-//}
