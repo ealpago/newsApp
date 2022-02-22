@@ -20,7 +20,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet var sharedButton: UIButton?
     @IBOutlet var backButton: UIButton?
     @IBOutlet var webSourceButton: UIButton?
-    var buttonChecked = false
+    var buttonChecked = true
     var details:Article?
     var url:String = ""
     
@@ -34,6 +34,10 @@ class DetailsViewController: UIViewController {
     }
     
     func setupUI() {
+        //Bu haber Favoride var mı
+        let isFavorite = FavoriteManager.shared.isNewsFind(model: details!)
+        self.prepareFavButton(isFav: isFavorite)
+
         titleLabel?.text = details?.title
         descriptionLabel?.text = details?.description
         detailsImageView?.downloaded(from: (details?.urlToImage)!)
@@ -57,24 +61,28 @@ class DetailsViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func favoriteButtonTapped(_ sender: UIButton){
-        sender.isSelected = !sender.isSelected
-        buttonChecked = sender.isSelected
-        if !buttonChecked {
-            favoritesButton?.setImage(UIImage(named: "favoriteDisable"), for: .normal)
-            if let details = details {
-                print("Haber Silindi")
-                FavoriteManager.shared.removeFavorite(model: details)
-            }
-        } else {
+    func prepareFavButton(isFav:Bool){
+        favoritesButton?.isSelected = isFav
+        if favoritesButton!.isSelected {//Favori ise
             favoritesButton?.setImage(UIImage(named: "favoriteEnable"), for: .normal)
+        }else{//değilse
+            favoritesButton?.setImage(UIImage(named: "favoriteDisable"), for: .normal)
+        }
+        
+    }
+    
+    @IBAction func favoriteButtonTapped(_ sender: UIButton){
+        if !sender.isSelected {
             if let details = details {
+                print("Haber Eklendi")
                 FavoriteManager.shared.addFavorite(model: details)
             }
+        } else {
+            if let details = details {
+                FavoriteManager.shared.removeFavorite(model: details)
+                print("Haber silindi")
+            }
         }
-        //buttonChecked
-//        if let details = details {
-//            FavoriteManager.shared.addFavorite(model: details)
-//        }
+        self.prepareFavButton(isFav: !sender.isSelected)
     }
 }

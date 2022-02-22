@@ -7,21 +7,10 @@
 
 import UIKit
 
-//protocol FavoriteViewControllerDelegate{
-//    func addFavorites(model:Article)
-//}
-
-//How to add favorites with singleton
-//singleton instance
-//addFavorites
-//removeFavorites
-//select-deselect
-
 class FavoritesViewController: UIViewController {
-        
+    
     @IBOutlet var favoriteTableView: UITableView!
     
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.favoriteTableView.estimatedRowHeight = 120.0

@@ -97,69 +97,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="93E-RV-AtA">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="93E-RV-AtA">
                                 <rect key="frame" x="10" y="54" width="394" height="798"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8TW-ZL-wCA" userLabel="Top Stack View">
-                                        <rect key="frame" x="10" y="0.0" width="374" height="50"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YmX-vb-6KA">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFE-RM-lrc" userLabel="Back Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="279.5" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
-                                                    <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="backButtonTapped" destination="vh9-fX-kL4" eventType="touchUpInside" id="K0I-lJ-py0"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUD-DM-PsZ" userLabel="Share Button">
-                                                <rect key="frame" x="279.5" y="0.0" width="44.5" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system" title=""/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2e-RS-tQF" userLabel="Favorites Button">
-                                                <rect key="frame" x="324" y="0.0" width="50" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="c4s-Td-6U2"/>
-                                                    <constraint firstAttribute="height" constant="50" id="g9r-Z0-sTi"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="favoriteDisable"/>
-                                                <connections>
-                                                    <action selector="favoriteButtonTapped:" destination="vh9-fX-kL4" eventType="touchUpInside" id="Jij-6o-B6b"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8TW-ZL-wCA" userLabel="Top Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFE-RM-lrc" userLabel="Back Button">
+                                                        <rect key="frame" x="0.0" y="0.0" width="98.5" height="50"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain">
+                                                            <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="backButtonTapped" destination="vh9-fX-kL4" eventType="touchUpInside" id="K0I-lJ-py0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCq-UJ-EJ3">
+                                                        <rect key="frame" x="98.5" y="0.0" width="98.5" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="lyy-w8-wgo"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUD-DM-PsZ" userLabel="Share Button">
+                                                        <rect key="frame" x="197" y="0.0" width="98.5" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="5gv-VL-KJB"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system" title=""/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2e-RS-tQF" userLabel="Favorites Button">
+                                                        <rect key="frame" x="295.5" y="0.0" width="98.5" height="50"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="favoriteDisable"/>
+                                                        <connections>
+                                                            <action selector="favoriteButtonTapped:" destination="vh9-fX-kL4" eventType="touchUpInside" id="Jij-6o-B6b"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="8TW-ZL-wCA" firstAttribute="top" secondItem="YmX-vb-6KA" secondAttribute="top" id="ce0-lv-NZt"/>
+                                            <constraint firstAttribute="bottom" secondItem="8TW-ZL-wCA" secondAttribute="bottom" id="cyH-xT-cVx"/>
+                                            <constraint firstAttribute="height" constant="50" id="jH2-Nh-CFh"/>
+                                            <constraint firstAttribute="trailing" secondItem="8TW-ZL-wCA" secondAttribute="trailing" id="qN4-M4-687"/>
+                                            <constraint firstItem="8TW-ZL-wCA" firstAttribute="leading" secondItem="YmX-vb-6KA" secondAttribute="leading" id="xKx-dE-57u"/>
+                                        </constraints>
+                                    </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o8F-Mf-cvf">
-                                        <rect key="frame" x="5" y="68" width="384" height="215"/>
+                                        <rect key="frame" x="0.0" y="68" width="394" height="215"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="215" id="M2q-3Y-I43"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVq-5u-d80">
-                                        <rect key="frame" x="111.5" y="301" width="171" height="24"/>
+                                        <rect key="frame" x="0.0" y="301" width="394" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="kcz-kw-L3g" userLabel="Mid Stack View">
-                                        <rect key="frame" x="79" y="343" width="236" height="31"/>
+                                        <rect key="frame" x="0.0" y="343" width="394" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5s-nB-wy1" userLabel="Author Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="169" height="31"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="doc.badge.plus" catalog="system" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymm-mf-HSf" userLabel="Publish Date Button">
-                                                <rect key="frame" x="146" y="0.0" width="90" height="31"/>
+                                                <rect key="frame" x="225" y="0.0" width="169" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="calendar" catalog="system" title="Button"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NuS-ji-d4y">
-                                        <rect key="frame" x="10" y="392" width="374" height="327"/>
+                                        <rect key="frame" x="0.0" y="392" width="394" height="357"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
@@ -167,7 +186,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e12-lg-BvN">
-                                        <rect key="frame" x="146" y="737" width="102.5" height="61"/>
+                                        <rect key="frame" x="0.0" y="767" width="394" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Web Source"/>
                                         <connections>
@@ -175,12 +194,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="8TW-ZL-wCA" firstAttribute="leading" secondItem="93E-RV-AtA" secondAttribute="leading" constant="10" id="B6N-2g-oEa"/>
-                                    <constraint firstAttribute="trailing" secondItem="8TW-ZL-wCA" secondAttribute="trailing" constant="10" id="UGH-ir-1DG"/>
-                                    <constraint firstItem="o8F-Mf-cvf" firstAttribute="leading" secondItem="93E-RV-AtA" secondAttribute="leading" constant="5" id="ZPi-bF-SC6"/>
-                                    <constraint firstItem="NuS-ji-d4y" firstAttribute="leading" secondItem="8TW-ZL-wCA" secondAttribute="leading" id="pjm-mm-zNr"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8x3-lF-F5C"/>
@@ -262,6 +275,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihb-hb-CG7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1706" y="115"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="a8h-Aa-GD4">
+            <objects>
+                <viewController id="oLe-TL-2iZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FlB-0J-icG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="aBI-kR-LYw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ESP-an-GOM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-358" y="971"/>
         </scene>
     </scenes>
     <resources>

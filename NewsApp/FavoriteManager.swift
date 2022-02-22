@@ -10,9 +10,8 @@ import Foundation
 class FavoriteManager {
     
     static let shared = FavoriteManager()
-    
     var favoritesNews: [Article] = []
-    
+
     func addFavorite(model:Article){
         //TODO: var olup olmadığını kontrol et, id ile kontrol et
         if !isNewsFind(model: model){
