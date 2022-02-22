@@ -35,6 +35,7 @@ class FavoritesViewController: UIViewController {
         super.viewWillAppear(animated)
         favoriteTableView.reloadData()
     }
+    ///deneme
     
 }
 
